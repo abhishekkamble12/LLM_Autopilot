@@ -7,6 +7,7 @@ from providers import Openai_llm_provider, AnthropicProvider, GeminiProvider, Ol
 import time 
 import random
 import asyncio
+import numpy as np
 
 from api.telemetry import (
     llm_cost_total, llm_savings_total, llm_request_latency_seconds,
@@ -237,6 +238,7 @@ class IntelligentRouter:
             "provider": provider_name,
             "prompt_tokens": prompt_tokens,
             "completion_tokens": completion_tokens,
+            "cost": actual_cost,
             "savings": savings,
             "explanation": self.complexity_engine.get_explanation(prompt)
         }

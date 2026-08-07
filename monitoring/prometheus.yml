@@ -5,5 +5,4 @@ global:
 scrape_configs:
   - job_name: "llm_autopilot_api"
     static_configs:
-      # Use host.docker.internal to scrape the FastAPI app running locally outside docker
-      - targets: ["host.docker.internal:8000"]
+      - targets: ["backend:8000"]

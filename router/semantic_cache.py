@@ -195,3 +195,10 @@ class SemanticCache:
             print(f"Failed to update feedback for log {log_id}: {e}")
             return False
     
+
+
+
+
+
+
+    

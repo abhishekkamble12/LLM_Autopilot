@@ -12,10 +12,20 @@ from router.intelligent_router import IntelligentRouter
 from prometheus_client import make_asgi_app
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI(
     title="LLM Cost Autopilot API",
     description="Intelligent LLM Gateway that routes prompts based on complexity to save inference costs.",
     version="1.0.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Mount Prometheus metrics endpoint
