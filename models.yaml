@@ -1,0 +1,66 @@
+# Model Registry Configuration for LLM Cost Autopilot
+# Cost units are USD per 1 Million Tokens
+
+anthropic/claude-3.5-sonnet:
+  provider: anthropic
+  input_cost_per_m: 3.00
+  output_cost_per_m: 15.00
+  tier: premium
+  quality: 9.8
+  latency: medium
+
+openai/gpt-4o:
+  provider: openai
+  input_cost_per_m: 2.50
+  output_cost_per_m: 10.00
+  tier: premium
+  quality: 9.6
+  latency: medium
+
+openai/o1-mini:
+  provider: openai
+  input_cost_per_m: 3.00
+  output_cost_per_m: 12.00
+  tier: premium
+  quality: 9.0
+  latency: medium
+
+google/gemini-flash-1.5:
+  provider: gemini
+  input_cost_per_m: 0.075
+  output_cost_per_m: 0.30
+  tier: cheap
+  quality: 8.4
+  latency: fast
+
+openrouter/auto:
+  provider: openrouter
+  input_cost_per_m: 2.00
+  output_cost_per_m: 10.00
+  tier: premium
+  quality: 9.0
+  latency: medium
+
+nvidia/nemotron-4-340b-instruct:free:
+  provider: nvidia
+  input_cost_per_m: 0.00
+  output_cost_per_m: 0.00
+  tier: free
+  quality: 8.0
+  latency: medium
+
+google/gemini-2.0-flash-exp:free:
+  provider: google
+  input_cost_per_m: 0.00
+  output_cost_per_m: 0.00
+  tier: free
+  quality: 8.5
+  latency: fast
+
+meta-llama/llama-3.1-8b-instruct:
+  provider: meta
+  input_cost_per_m: 0.15
+  output_cost_per_m: 0.15
+  tier: cheap
+  quality: 7.5
+  latency: fast
